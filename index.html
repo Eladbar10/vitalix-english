@@ -1638,8 +1638,8 @@ const productDetails = {
         scientificName: 'Tirzepatide • Dual GLP-1/GIP Agonist',
         category: 'wellness',
         emoji: '💉',
-        price: 900,
-        regularPrice: 1150,
+        price: 499,
+        regularPrice: 640,
         hasDiscount: true,
         discountPercent: 22,
         monthlyQuantity: '60 mg',
@@ -1657,8 +1657,8 @@ const productDetails = {
         scientificName: 'Semaglutide • GLP-1 Receptor Agonist',
         category: 'wellness',
         emoji: '💉',
-        price: 800,
-        regularPrice: 1050,
+        price: 399,
+        regularPrice: 525,
         hasDiscount: true,
         discountPercent: 24,
         monthlyQuantity: '10 mg',
@@ -1676,8 +1676,8 @@ const productDetails = {
         scientificName: 'Retatrutide • Triple Agonist GLP-1/GIP/Glucagon',
         category: 'wellness',
         emoji: '🎯',
-        price: 1050,
-        regularPrice: 1400,
+        price: 599,
+        regularPrice: 799,
         hasDiscount: true,
         discountPercent: 25,
         monthlyQuantity: '50 mg',
@@ -2193,13 +2193,12 @@ function renderProducts() {
                     <p class="product-description">${p.description}</p>
                     <div class="product-footer">
                         <div class="product-price">
-                            ${p.hasDiscount ? `<div class="regular-price-strike"><span class="currency-strike">$</span><span class="amount-strike">${p.regularPrice.toLocaleString('en-US')}</span></div>` : ''}
-                            <span class="currency">$</span>
+                            ${p.hasDiscount ? `<div class="regular-price-strike"><span class="currency-strike">US$</span><span class="amount-strike">${p.regularPrice.toLocaleString('en-US')}</span></div>` : ''}
+                            <span class="currency">US$</span>
                             <span class="amount">${p.price.toLocaleString('en-US')}</span>
-                            <span class="mxn">MXN</span>
                             ${p.priceNote ? `<div class="price-note">${p.priceNote}</div>` : ''}
                         </div>
-                        <button class="view-btn">Ver Detalles</button>
+                        <button class="view-btn">See Details</button>
                     </div>
                 </div>
             </div>
@@ -2245,11 +2244,11 @@ function showProductDetail(key) {
                     <div class="price-label">${p.priceNote || 'Price'}</div>
                     ${p.hasDiscount ? `
                         <div style="display: flex; align-items: center; gap: 12px; justify-content: center; margin-bottom: 8px;">
-                            <span style="text-decoration: line-through; color: #9ca3af; font-size: 22px; font-weight: 500;">$${p.regularPrice.toLocaleString('en-US')}</span>
+                            <span style="text-decoration: line-through; color: #9ca3af; font-size: 22px; font-weight: 500;">US$${p.regularPrice.toLocaleString('en-US')}</span>
                             <span style="background: linear-gradient(135deg, #dc2626, #b91c1c); color: white; padding: 6px 14px; border-radius: 100px; font-size: 14px; font-weight: 900; letter-spacing: 1px; box-shadow: 0 4px 12px rgba(220,38,38,0.4);">-${p.discountPercent || 10}% OFF</span>
                         </div>
                     ` : ''}
-                    <div class="price-value"><span class="currency">$</span>${p.price.toLocaleString('en-US')}<span class="mxn"> USD</span></div>
+                    <div class="price-value"><span class="currency">US$</span>${p.price.toLocaleString('en-US')}</div>
                     ${isPremiumModal 
                         ? `<div style="margin-top: 12px; color: #065f46; font-weight: 700; font-size: 14px; background: rgba(16,185,129,0.1); padding: 8px 12px; border-radius: 8px; display: inline-block;">💊 All doses included: from initial to maximum</div>`
                         : (p.monthlyQuantity ? `<div style="margin-top: 12px; color: #92400e; font-weight: 600; font-size: 14px;">📦 Quantity: ${p.monthlyQuantity}</div>` : '')
