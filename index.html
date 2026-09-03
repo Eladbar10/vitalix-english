@@ -2593,7 +2593,7 @@ function renderProducts() {
                     <div class="product-id">${p.scientificName}</div>
                     <h3 class="product-name">${p.name}</h3>
                     ${(isPremium && !p.oneMonth) 
-                        ? `<div class="dose-range">💊 All doses included</div>` 
+                        ? `<div class="dose-range">💊 3 Vials included</div>` 
                         : (p.monthlyQuantity ? `<div class="monthly-qty">📦 ${p.monthlyQuantity}</div>` : '')
                     }
                     <p class="product-description">${p.description}</p>
@@ -2717,7 +2717,7 @@ function showProductDetail(key) {
     document.getElementById('modalName').textContent = p.name;
     const isPremiumModal = p.category === 'wellness';
     document.getElementById('modalSubtitle').textContent = (isPremiumModal && !p.oneMonth)
-        ? `${p.scientificName} • 💊 All doses included`
+        ? `${p.scientificName} • 💊 3 Vials included`
         : (p.monthlyQuantity ? `${p.scientificName} • 📦 ${p.monthlyQuantity}` : p.scientificName);
     
     // Determine label name display
@@ -2747,7 +2747,7 @@ function showProductDetail(key) {
                     ` : ''}
                     <div class="price-value"><span class="currency">US$</span>${p.price.toLocaleString('en-US')}</div>
                     ${(isPremiumModal && !p.oneMonth) 
-                        ? `<div style="margin-top: 12px; color: #065f46; font-weight: 700; font-size: 14px; background: rgba(16,185,129,0.1); padding: 8px 12px; border-radius: 8px; display: inline-block;">💊 All doses included: from initial to maximum</div>`
+                        ? `<div style="margin-top: 12px; color: #065f46; font-weight: 700; font-size: 14px; background: rgba(16,185,129,0.1); padding: 8px 12px; border-radius: 8px; display: inline-block;">💊 3 Vials included: from initial to maximum</div>`
                         : (p.monthlyQuantity ? `<div style="margin-top: 12px; color: #92400e; font-weight: 600; font-size: 14px;">📦 Quantity: ${p.monthlyQuantity}</div>` : '')
                     }
                 </div>
